@@ -1,0 +1,833 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    	
+    <dimen name="dp_m_60">-67.9245dp</dimen>
+    	
+    <dimen name="dp_m_30">-33.9623dp</dimen>
+    	
+    <dimen name="dp_m_20">-22.6415dp</dimen>
+    	
+    <dimen name="dp_m_12">-13.5849dp</dimen>
+    	
+    <dimen name="dp_m_10">-11.3208dp</dimen>
+    	
+    <dimen name="dp_m_8">-9.0566dp</dimen>
+    	
+    <dimen name="dp_m_5">-5.6604dp</dimen>
+    	
+    <dimen name="dp_m_2">-2.2642dp</dimen>
+    	
+    <dimen name="dp_m_1">-1.1321dp</dimen>
+    	
+    <dimen name="dp_0">0.0000dp</dimen>
+    	
+    <dimen name="dp_0_1">0.1132dp</dimen>
+    	
+    <dimen name="dp_0_5">0.5660dp</dimen>
+    	
+    <dimen name="dp_1">1.1321dp</dimen>
+    	
+    <dimen name="dp_1_5">1.6981dp</dimen>
+    	
+    <dimen name="dp_2">2.2642dp</dimen>
+    	
+    <dimen name="dp_2_5">2.8302dp</dimen>
+    	
+    <dimen name="dp_3">3.3962dp</dimen>
+    	
+    <dimen name="dp_3_5">3.9623dp</dimen>
+    	
+    <dimen name="dp_4">4.5283dp</dimen>
+    	
+    <dimen name="dp_4_5">5.0943dp</dimen>
+    	
+    <dimen name="dp_5">5.6604dp</dimen>
+    	
+    <dimen name="dp_6">6.7925dp</dimen>
+    	
+    <dimen name="dp_7">7.9245dp</dimen>
+    	
+    <dimen name="dp_8">9.0566dp</dimen>
+    	
+    <dimen name="dp_9">10.1887dp</dimen>
+    	
+    <dimen name="dp_10">11.3208dp</dimen>
+    	
+    <dimen name="dp_11">12.4528dp</dimen>
+    	
+    <dimen name="dp_12">13.5849dp</dimen>
+    	
+    <dimen name="dp_13">14.7170dp</dimen>
+    	
+    <dimen name="dp_14">15.8491dp</dimen>
+    	
+    <dimen name="dp_15">16.9811dp</dimen>
+    	
+    <dimen name="dp_16">18.1132dp</dimen>
+    	
+    <dimen name="dp_17">19.2453dp</dimen>
+    	
+    <dimen name="dp_18">20.3774dp</dimen>
+    	
+    <dimen name="dp_19">21.5094dp</dimen>
+    	
+    <dimen name="dp_20">22.6415dp</dimen>
+    	
+    <dimen name="dp_21">23.7736dp</dimen>
+    	
+    <dimen name="dp_22">24.9057dp</dimen>
+    	
+    <dimen name="dp_23">26.0377dp</dimen>
+    	
+    <dimen name="dp_24">27.1698dp</dimen>
+    	
+    <dimen name="dp_25">28.3019dp</dimen>
+    	
+    <dimen name="dp_26">29.4340dp</dimen>
+    	
+    <dimen name="dp_27">30.5660dp</dimen>
+    	
+    <dimen name="dp_28">31.6981dp</dimen>
+    	
+    <dimen name="dp_29">32.8302dp</dimen>
+    	
+    <dimen name="dp_30">33.9623dp</dimen>
+    	
+    <dimen name="dp_31">35.0943dp</dimen>
+    	
+    <dimen name="dp_32">36.2264dp</dimen>
+    	
+    <dimen name="dp_33">37.3585dp</dimen>
+    	
+    <dimen name="dp_34">38.4906dp</dimen>
+    	
+    <dimen name="dp_35">39.6226dp</dimen>
+    	
+    <dimen name="dp_36">40.7547dp</dimen>
+    	
+    <dimen name="dp_37">41.8868dp</dimen>
+    	
+    <dimen name="dp_38">43.0189dp</dimen>
+    	
+    <dimen name="dp_39">44.1509dp</dimen>
+    	
+    <dimen name="dp_40">45.2830dp</dimen>
+    	
+    <dimen name="dp_41">46.4151dp</dimen>
+    	
+    <dimen name="dp_42">47.5472dp</dimen>
+    	
+    <dimen name="dp_43">48.6792dp</dimen>
+    	
+    <dimen name="dp_44">49.8113dp</dimen>
+    	
+    <dimen name="dp_45">50.9434dp</dimen>
+    	
+    <dimen name="dp_46">52.0755dp</dimen>
+    	
+    <dimen name="dp_47">53.2075dp</dimen>
+    	
+    <dimen name="dp_48">54.3396dp</dimen>
+    	
+    <dimen name="dp_49">55.4717dp</dimen>
+    	
+    <dimen name="dp_50">56.6038dp</dimen>
+    	
+    <dimen name="dp_51">57.7358dp</dimen>
+    	
+    <dimen name="dp_52">58.8679dp</dimen>
+    	
+    <dimen name="dp_53">60.0000dp</dimen>
+    	
+    <dimen name="dp_54">61.1321dp</dimen>
+    	
+    <dimen name="dp_55">62.2641dp</dimen>
+    	
+    <dimen name="dp_56">63.3962dp</dimen>
+    	
+    <dimen name="dp_57">64.5283dp</dimen>
+    	
+    <dimen name="dp_58">65.6604dp</dimen>
+    	
+    <dimen name="dp_59">66.7924dp</dimen>
+    	
+    <dimen name="dp_60">67.9245dp</dimen>
+    	
+    <dimen name="dp_61">69.0566dp</dimen>
+    	
+    <dimen name="dp_62">70.1887dp</dimen>
+    	
+    <dimen name="dp_63">71.3207dp</dimen>
+    	
+    <dimen name="dp_64">72.4528dp</dimen>
+    	
+    <dimen name="dp_65">73.5849dp</dimen>
+    	
+    <dimen name="dp_66">74.7170dp</dimen>
+    	
+    <dimen name="dp_67">75.8490dp</dimen>
+    	
+    <dimen name="dp_68">76.9811dp</dimen>
+    	
+    <dimen name="dp_69">78.1132dp</dimen>
+    	
+    <dimen name="dp_70">79.2453dp</dimen>
+    	
+    <dimen name="dp_71">80.3773dp</dimen>
+    	
+    <dimen name="dp_72">81.5094dp</dimen>
+    	
+    <dimen name="dp_73">82.6415dp</dimen>
+    	
+    <dimen name="dp_74">83.7736dp</dimen>
+    	
+    <dimen name="dp_75">84.9056dp</dimen>
+    	
+    <dimen name="dp_76">86.0377dp</dimen>
+    	
+    <dimen name="dp_77">87.1698dp</dimen>
+    	
+    <dimen name="dp_78">88.3019dp</dimen>
+    	
+    <dimen name="dp_79">89.4339dp</dimen>
+    	
+    <dimen name="dp_80">90.5660dp</dimen>
+    	
+    <dimen name="dp_81">91.6981dp</dimen>
+    	
+    <dimen name="dp_82">92.8302dp</dimen>
+    	
+    <dimen name="dp_83">93.9623dp</dimen>
+    	
+    <dimen name="dp_84">95.0943dp</dimen>
+    	
+    <dimen name="dp_85">96.2264dp</dimen>
+    	
+    <dimen name="dp_86">97.3585dp</dimen>
+    	
+    <dimen name="dp_87">98.4906dp</dimen>
+    	
+    <dimen name="dp_88">99.6226dp</dimen>
+    	
+    <dimen name="dp_89">100.7547dp</dimen>
+    	
+    <dimen name="dp_90">101.8868dp</dimen>
+    	
+    <dimen name="dp_91">103.0189dp</dimen>
+    	
+    <dimen name="dp_92">104.1509dp</dimen>
+    	
+    <dimen name="dp_93">105.2830dp</dimen>
+    	
+    <dimen name="dp_94">106.4151dp</dimen>
+    	
+    <dimen name="dp_95">107.5472dp</dimen>
+    	
+    <dimen name="dp_96">108.6792dp</dimen>
+    	
+    <dimen name="dp_97">109.8113dp</dimen>
+    	
+    <dimen name="dp_98">110.9434dp</dimen>
+    	
+    <dimen name="dp_99">112.0755dp</dimen>
+    	
+    <dimen name="dp_100">113.2075dp</dimen>
+    	
+    <dimen name="dp_101">114.3396dp</dimen>
+    	
+    <dimen name="dp_102">115.4717dp</dimen>
+    	
+    <dimen name="dp_103">116.6038dp</dimen>
+    	
+    <dimen name="dp_104">117.7358dp</dimen>
+    	
+    <dimen name="dp_105">118.8679dp</dimen>
+    	
+    <dimen name="dp_106">120.0000dp</dimen>
+    	
+    <dimen name="dp_107">121.1321dp</dimen>
+    	
+    <dimen name="dp_108">122.2641dp</dimen>
+    	
+    <dimen name="dp_109">123.3962dp</dimen>
+    	
+    <dimen name="dp_110">124.5283dp</dimen>
+    	
+    <dimen name="dp_111">125.6604dp</dimen>
+    	
+    <dimen name="dp_112">126.7924dp</dimen>
+    	
+    <dimen name="dp_113">127.9245dp</dimen>
+    	
+    <dimen name="dp_114">129.0566dp</dimen>
+    	
+    <dimen name="dp_115">130.1887dp</dimen>
+    	
+    <dimen name="dp_116">131.3207dp</dimen>
+    	
+    <dimen name="dp_117">132.4528dp</dimen>
+    	
+    <dimen name="dp_118">133.5849dp</dimen>
+    	
+    <dimen name="dp_119">134.7170dp</dimen>
+    	
+    <dimen name="dp_120">135.8490dp</dimen>
+    	
+    <dimen name="dp_121">136.9811dp</dimen>
+    	
+    <dimen name="dp_122">138.1132dp</dimen>
+    	
+    <dimen name="dp_123">139.2453dp</dimen>
+    	
+    <dimen name="dp_124">140.3773dp</dimen>
+    	
+    <dimen name="dp_125">141.5094dp</dimen>
+    	
+    <dimen name="dp_126">142.6415dp</dimen>
+    	
+    <dimen name="dp_127">143.7736dp</dimen>
+    	
+    <dimen name="dp_128">144.9056dp</dimen>
+    	
+    <dimen name="dp_129">146.0377dp</dimen>
+    	
+    <dimen name="dp_130">147.1698dp</dimen>
+    	
+    <dimen name="dp_131">148.3019dp</dimen>
+    	
+    <dimen name="dp_132">149.4339dp</dimen>
+    	
+    <dimen name="dp_133">150.5660dp</dimen>
+    	
+    <dimen name="dp_134">151.6981dp</dimen>
+    	
+    <dimen name="dp_135">152.8302dp</dimen>
+    	
+    <dimen name="dp_136">153.9622dp</dimen>
+    	
+    <dimen name="dp_137">155.0943dp</dimen>
+    	
+    <dimen name="dp_138">156.2264dp</dimen>
+    	
+    <dimen name="dp_139">157.3585dp</dimen>
+    	
+    <dimen name="dp_140">158.4905dp</dimen>
+    	
+    <dimen name="dp_141">159.6226dp</dimen>
+    	
+    <dimen name="dp_142">160.7547dp</dimen>
+    	
+    <dimen name="dp_143">161.8868dp</dimen>
+    	
+    <dimen name="dp_144">163.0188dp</dimen>
+    	
+    <dimen name="dp_145">164.1509dp</dimen>
+    	
+    <dimen name="dp_146">165.2830dp</dimen>
+    	
+    <dimen name="dp_147">166.4151dp</dimen>
+    	
+    <dimen name="dp_148">167.5471dp</dimen>
+    	
+    <dimen name="dp_149">168.6792dp</dimen>
+    	
+    <dimen name="dp_150">169.8113dp</dimen>
+    	
+    <dimen name="dp_151">170.9434dp</dimen>
+    	
+    <dimen name="dp_152">172.0754dp</dimen>
+    	
+    <dimen name="dp_153">173.2075dp</dimen>
+    	
+    <dimen name="dp_154">174.3396dp</dimen>
+    	
+    <dimen name="dp_155">175.4717dp</dimen>
+    	
+    <dimen name="dp_156">176.6037dp</dimen>
+    	
+    <dimen name="dp_157">177.7358dp</dimen>
+    	
+    <dimen name="dp_158">178.8679dp</dimen>
+    	
+    <dimen name="dp_159">180.0000dp</dimen>
+    	
+    <dimen name="dp_160">181.1320dp</dimen>
+    	
+    <dimen name="dp_161">182.2641dp</dimen>
+    	
+    <dimen name="dp_162">183.3962dp</dimen>
+    	
+    <dimen name="dp_163">184.5283dp</dimen>
+    	
+    <dimen name="dp_164">185.6604dp</dimen>
+    	
+    <dimen name="dp_165">186.7924dp</dimen>
+    	
+    <dimen name="dp_166">187.9245dp</dimen>
+    	
+    <dimen name="dp_167">189.0566dp</dimen>
+    	
+    <dimen name="dp_168">190.1887dp</dimen>
+    	
+    <dimen name="dp_169">191.3207dp</dimen>
+    	
+    <dimen name="dp_170">192.4528dp</dimen>
+    	
+    <dimen name="dp_171">193.5849dp</dimen>
+    	
+    <dimen name="dp_172">194.7170dp</dimen>
+    	
+    <dimen name="dp_173">195.8490dp</dimen>
+    	
+    <dimen name="dp_174">196.9811dp</dimen>
+    	
+    <dimen name="dp_175">198.1132dp</dimen>
+    	
+    <dimen name="dp_176">199.2453dp</dimen>
+    	
+    <dimen name="dp_177">200.3773dp</dimen>
+    	
+    <dimen name="dp_178">201.5094dp</dimen>
+    	
+    <dimen name="dp_179">202.6415dp</dimen>
+    	
+    <dimen name="dp_180">203.7736dp</dimen>
+    	
+    <dimen name="dp_181">204.9056dp</dimen>
+    	
+    <dimen name="dp_182">206.0377dp</dimen>
+    	
+    <dimen name="dp_183">207.1698dp</dimen>
+    	
+    <dimen name="dp_184">208.3019dp</dimen>
+    	
+    <dimen name="dp_185">209.4339dp</dimen>
+    	
+    <dimen name="dp_186">210.5660dp</dimen>
+    	
+    <dimen name="dp_187">211.6981dp</dimen>
+    	
+    <dimen name="dp_188">212.8302dp</dimen>
+    	
+    <dimen name="dp_189">213.9622dp</dimen>
+    	
+    <dimen name="dp_190">215.0943dp</dimen>
+    	
+    <dimen name="dp_191">216.2264dp</dimen>
+    	
+    <dimen name="dp_192">217.3585dp</dimen>
+    	
+    <dimen name="dp_193">218.4905dp</dimen>
+    	
+    <dimen name="dp_194">219.6226dp</dimen>
+    	
+    <dimen name="dp_195">220.7547dp</dimen>
+    	
+    <dimen name="dp_196">221.8868dp</dimen>
+    	
+    <dimen name="dp_197">223.0188dp</dimen>
+    	
+    <dimen name="dp_198">224.1509dp</dimen>
+    	
+    <dimen name="dp_199">225.2830dp</dimen>
+    	
+    <dimen name="dp_200">226.4151dp</dimen>
+    	
+    <dimen name="dp_201">227.5471dp</dimen>
+    	
+    <dimen name="dp_202">228.6792dp</dimen>
+    	
+    <dimen name="dp_203">229.8113dp</dimen>
+    	
+    <dimen name="dp_204">230.9434dp</dimen>
+    	
+    <dimen name="dp_205">232.0754dp</dimen>
+    	
+    <dimen name="dp_206">233.2075dp</dimen>
+    	
+    <dimen name="dp_207">234.3396dp</dimen>
+    	
+    <dimen name="dp_208">235.4717dp</dimen>
+    	
+    <dimen name="dp_209">236.6037dp</dimen>
+    	
+    <dimen name="dp_210">237.7358dp</dimen>
+    	
+    <dimen name="dp_211">238.8679dp</dimen>
+    	
+    <dimen name="dp_212">240.0000dp</dimen>
+    	
+    <dimen name="dp_213">241.1320dp</dimen>
+    	
+    <dimen name="dp_214">242.2641dp</dimen>
+    	
+    <dimen name="dp_215">243.3962dp</dimen>
+    	
+    <dimen name="dp_216">244.5283dp</dimen>
+    	
+    <dimen name="dp_217">245.6603dp</dimen>
+    	
+    <dimen name="dp_218">246.7924dp</dimen>
+    	
+    <dimen name="dp_219">247.9245dp</dimen>
+    	
+    <dimen name="dp_220">249.0566dp</dimen>
+    	
+    <dimen name="dp_221">250.1886dp</dimen>
+    	
+    <dimen name="dp_222">251.3207dp</dimen>
+    	
+    <dimen name="dp_223">252.4528dp</dimen>
+    	
+    <dimen name="dp_224">253.5849dp</dimen>
+    	
+    <dimen name="dp_225">254.7169dp</dimen>
+    	
+    <dimen name="dp_226">255.8490dp</dimen>
+    	
+    <dimen name="dp_227">256.9811dp</dimen>
+    	
+    <dimen name="dp_228">258.1132dp</dimen>
+    	
+    <dimen name="dp_229">259.2452dp</dimen>
+    	
+    <dimen name="dp_230">260.3773dp</dimen>
+    	
+    <dimen name="dp_231">261.5094dp</dimen>
+    	
+    <dimen name="dp_232">262.6415dp</dimen>
+    	
+    <dimen name="dp_233">263.7735dp</dimen>
+    	
+    <dimen name="dp_234">264.9056dp</dimen>
+    	
+    <dimen name="dp_235">266.0377dp</dimen>
+    	
+    <dimen name="dp_236">267.1698dp</dimen>
+    	
+    <dimen name="dp_237">268.3018dp</dimen>
+    	
+    <dimen name="dp_238">269.4339dp</dimen>
+    	
+    <dimen name="dp_239">270.5660dp</dimen>
+    	
+    <dimen name="dp_240">271.6981dp</dimen>
+    	
+    <dimen name="dp_241">272.8302dp</dimen>
+    	
+    <dimen name="dp_242">273.9622dp</dimen>
+    	
+    <dimen name="dp_243">275.0943dp</dimen>
+    	
+    <dimen name="dp_244">276.2264dp</dimen>
+    	
+    <dimen name="dp_245">277.3585dp</dimen>
+    	
+    <dimen name="dp_246">278.4905dp</dimen>
+    	
+    <dimen name="dp_247">279.6226dp</dimen>
+    	
+    <dimen name="dp_248">280.7547dp</dimen>
+    	
+    <dimen name="dp_249">281.8868dp</dimen>
+    	
+    <dimen name="dp_250">283.0188dp</dimen>
+    	
+    <dimen name="dp_251">284.1509dp</dimen>
+    	
+    <dimen name="dp_252">285.2830dp</dimen>
+    	
+    <dimen name="dp_253">286.4151dp</dimen>
+    	
+    <dimen name="dp_254">287.5471dp</dimen>
+    	
+    <dimen name="dp_255">288.6792dp</dimen>
+    	
+    <dimen name="dp_256">289.8113dp</dimen>
+    	
+    <dimen name="dp_257">290.9434dp</dimen>
+    	
+    <dimen name="dp_258">292.0754dp</dimen>
+    	
+    <dimen name="dp_259">293.2075dp</dimen>
+    	
+    <dimen name="dp_260">294.3396dp</dimen>
+    	
+    <dimen name="dp_261">295.4717dp</dimen>
+    	
+    <dimen name="dp_262">296.6037dp</dimen>
+    	
+    <dimen name="dp_263">297.7358dp</dimen>
+    	
+    <dimen name="dp_264">298.8679dp</dimen>
+    	
+    <dimen name="dp_265">300.0000dp</dimen>
+    	
+    <dimen name="dp_266">301.1320dp</dimen>
+    	
+    <dimen name="dp_267">302.2641dp</dimen>
+    	
+    <dimen name="dp_268">303.3962dp</dimen>
+    	
+    <dimen name="dp_269">304.5283dp</dimen>
+    	
+    <dimen name="dp_270">305.6603dp</dimen>
+    	
+    <dimen name="dp_271">306.7924dp</dimen>
+    	
+    <dimen name="dp_272">307.9245dp</dimen>
+    	
+    <dimen name="dp_273">309.0566dp</dimen>
+    	
+    <dimen name="dp_274">310.1886dp</dimen>
+    	
+    <dimen name="dp_275">311.3207dp</dimen>
+    	
+    <dimen name="dp_276">312.4528dp</dimen>
+    	
+    <dimen name="dp_277">313.5849dp</dimen>
+    	
+    <dimen name="dp_278">314.7169dp</dimen>
+    	
+    <dimen name="dp_279">315.8490dp</dimen>
+    	
+    <dimen name="dp_280">316.9811dp</dimen>
+    	
+    <dimen name="dp_281">318.1132dp</dimen>
+    	
+    <dimen name="dp_282">319.2452dp</dimen>
+    	
+    <dimen name="dp_283">320.3773dp</dimen>
+    	
+    <dimen name="dp_284">321.5094dp</dimen>
+    	
+    <dimen name="dp_285">322.6415dp</dimen>
+    	
+    <dimen name="dp_286">323.7735dp</dimen>
+    	
+    <dimen name="dp_287">324.9056dp</dimen>
+    	
+    <dimen name="dp_288">326.0377dp</dimen>
+    	
+    <dimen name="dp_289">327.1698dp</dimen>
+    	
+    <dimen name="dp_290">328.3018dp</dimen>
+    	
+    <dimen name="dp_291">329.4339dp</dimen>
+    	
+    <dimen name="dp_292">330.5660dp</dimen>
+    	
+    <dimen name="dp_293">331.6981dp</dimen>
+    	
+    <dimen name="dp_294">332.8301dp</dimen>
+    	
+    <dimen name="dp_295">333.9622dp</dimen>
+    	
+    <dimen name="dp_296">335.0943dp</dimen>
+    	
+    <dimen name="dp_297">336.2264dp</dimen>
+    	
+    <dimen name="dp_298">337.3584dp</dimen>
+    	
+    <dimen name="dp_299">338.4905dp</dimen>
+    	
+    <dimen name="dp_300">339.6226dp</dimen>
+    	
+    <dimen name="dp_301">340.7547dp</dimen>
+    	
+    <dimen name="dp_302">341.8867dp</dimen>
+    	
+    <dimen name="dp_303">343.0188dp</dimen>
+    	
+    <dimen name="dp_304">344.1509dp</dimen>
+    	
+    <dimen name="dp_305">345.2830dp</dimen>
+    	
+    <dimen name="dp_306">346.4150dp</dimen>
+    	
+    <dimen name="dp_307">347.5471dp</dimen>
+    	
+    <dimen name="dp_308">348.6792dp</dimen>
+    	
+    <dimen name="dp_309">349.8113dp</dimen>
+    	
+    <dimen name="dp_310">350.9433dp</dimen>
+    	
+    <dimen name="dp_311">352.0754dp</dimen>
+    	
+    <dimen name="dp_312">353.2075dp</dimen>
+    	
+    <dimen name="dp_313">354.3396dp</dimen>
+    	
+    <dimen name="dp_314">355.4716dp</dimen>
+    	
+    <dimen name="dp_315">356.6037dp</dimen>
+    	
+    <dimen name="dp_316">357.7358dp</dimen>
+    	
+    <dimen name="dp_317">358.8679dp</dimen>
+    	
+    <dimen name="dp_318">359.9999dp</dimen>
+    	
+    <dimen name="dp_319">361.1320dp</dimen>
+    	
+    <dimen name="dp_320">362.2641dp</dimen>
+    	
+    <dimen name="dp_321">363.3962dp</dimen>
+    	
+    <dimen name="dp_322">364.5283dp</dimen>
+    	
+    <dimen name="dp_323">365.6603dp</dimen>
+    	
+    <dimen name="dp_324">366.7924dp</dimen>
+    	
+    <dimen name="dp_325">367.9245dp</dimen>
+    	
+    <dimen name="dp_326">369.0566dp</dimen>
+    	
+    <dimen name="dp_327">370.1886dp</dimen>
+    	
+    <dimen name="dp_328">371.3207dp</dimen>
+    	
+    <dimen name="dp_329">372.4528dp</dimen>
+    	
+    <dimen name="dp_330">373.5849dp</dimen>
+    	
+    <dimen name="dp_331">374.7169dp</dimen>
+    	
+    <dimen name="dp_332">375.8490dp</dimen>
+    	
+    <dimen name="dp_333">376.9811dp</dimen>
+    	
+    <dimen name="dp_334">378.1132dp</dimen>
+    	
+    <dimen name="dp_335">379.2452dp</dimen>
+    	
+    <dimen name="dp_336">380.3773dp</dimen>
+    	
+    <dimen name="dp_337">381.5094dp</dimen>
+    	
+    <dimen name="dp_338">382.6415dp</dimen>
+    	
+    <dimen name="dp_339">383.7735dp</dimen>
+    	
+    <dimen name="dp_340">384.9056dp</dimen>
+    	
+    <dimen name="dp_341">386.0377dp</dimen>
+    	
+    <dimen name="dp_342">387.1698dp</dimen>
+    	
+    <dimen name="dp_343">388.3018dp</dimen>
+    	
+    <dimen name="dp_344">389.4339dp</dimen>
+    	
+    <dimen name="dp_345">390.5660dp</dimen>
+    	
+    <dimen name="dp_346">391.6981dp</dimen>
+    	
+    <dimen name="dp_347">392.8301dp</dimen>
+    	
+    <dimen name="dp_348">393.9622dp</dimen>
+    	
+    <dimen name="dp_349">395.0943dp</dimen>
+    	
+    <dimen name="dp_350">396.2264dp</dimen>
+    	
+    <dimen name="dp_351">397.3584dp</dimen>
+    	
+    <dimen name="dp_352">398.4905dp</dimen>
+    	
+    <dimen name="dp_353">399.6226dp</dimen>
+    	
+    <dimen name="dp_354">400.7547dp</dimen>
+    	
+    <dimen name="dp_355">401.8867dp</dimen>
+    	
+    <dimen name="dp_356">403.0188dp</dimen>
+    	
+    <dimen name="dp_357">404.1509dp</dimen>
+    	
+    <dimen name="dp_358">405.2830dp</dimen>
+    	
+    <dimen name="dp_359">406.4150dp</dimen>
+    	
+    <dimen name="dp_360">407.5471dp</dimen>
+    	
+    <dimen name="dp_365">413.2075dp</dimen>
+    	
+    <dimen name="dp_370">418.8679dp</dimen>
+    	
+    <dimen name="dp_400">452.8301dp</dimen>
+    	
+    <dimen name="dp_410">464.1509dp</dimen>
+    	
+    <dimen name="dp_422">477.7358dp</dimen>
+    	
+    <dimen name="dp_472">534.3395dp</dimen>
+    	
+    <dimen name="dp_500">566.0377dp</dimen>
+    	
+    <dimen name="dp_600">679.2452dp</dimen>
+    	
+    <dimen name="dp_640">724.5282dp</dimen>
+    	
+    <dimen name="dp_720">815.0942dp</dimen>
+    	
+    <dimen name="sp_6">6.7925sp</dimen>
+    	
+    <dimen name="sp_7">7.9245sp</dimen>
+    	
+    <dimen name="sp_8">9.0566sp</dimen>
+    	
+    <dimen name="sp_9">10.1887sp</dimen>
+    	
+    <dimen name="sp_10">11.3208sp</dimen>
+    	
+    <dimen name="sp_11">12.4528sp</dimen>
+    	
+    <dimen name="sp_12">13.5849sp</dimen>
+    	
+    <dimen name="sp_13">14.7170sp</dimen>
+    	
+    <dimen name="sp_14">15.8491sp</dimen>
+    	
+    <dimen name="sp_15">16.9811sp</dimen>
+    	
+    <dimen name="sp_16">18.1132sp</dimen>
+    	
+    <dimen name="sp_17">19.2453sp</dimen>
+    	
+    <dimen name="sp_18">20.3774sp</dimen>
+    	
+    <dimen name="sp_19">21.5094sp</dimen>
+    	
+    <dimen name="sp_20">22.6415sp</dimen>
+    	
+    <dimen name="sp_21">23.7736sp</dimen>
+    	
+    <dimen name="sp_22">24.9057sp</dimen>
+    	
+    <dimen name="sp_23">26.0377sp</dimen>
+    	
+    <dimen name="sp_24">27.1698sp</dimen>
+    	
+    <dimen name="sp_25">28.3019sp</dimen>
+    	
+    <dimen name="sp_28">31.6981sp</dimen>
+    	
+    <dimen name="sp_30">33.9623sp</dimen>
+    	
+    <dimen name="sp_32">36.2264sp</dimen>
+    	
+    <dimen name="sp_34">38.4906sp</dimen>
+    	
+    <dimen name="sp_36">40.7547sp</dimen>
+    	
+    <dimen name="sp_38">43.0189sp</dimen>
+    	
+    <dimen name="sp_40">45.2830sp</dimen>
+    	
+    <dimen name="sp_42">47.5472sp</dimen>
+    	
+    <dimen name="sp_48">54.3396sp</dimen>
+</resources>

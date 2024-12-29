@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="image_style_circleStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+    <style name="image_corner_8dp">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/dp_8</item>
+    </style>
+
+    <style name="image_corner_12dp">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/dp_12</item>
+    </style>
+
+
+    <style name="image_corner_20dp">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/dp_20</item>
+    </style>
+
+    <style name="image_style_corner_14dp">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/dp_14</item>
+    </style>
+
+    <style name="image_style_corner_top_12dp">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/dp_12</item>
+        <item name="cornerSizeTopRight">@dimen/dp_12</item>
+    </style>
+
+    <style name="image_style_corner_5">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">5%</item>
+    </style>
+
+    <style name="image_style_bottom_corner_14">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomRight">@dimen/dp_14</item>
+        <item name="cornerSizeBottomLeft">@dimen/dp_14</item>
+    </style>
+
+    <style name="image_style_bottom_corner_12">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomRight">@dimen/dp_12</item>
+        <item name="cornerSizeBottomLeft">@dimen/dp_12</item>
+    </style>
+
+    <style name="image_style_bottom_corner_52">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomRight">@dimen/dp_52</item>
+        <item name="cornerSizeBottomLeft">@dimen/dp_52</item>
+    </style>
+
+</resources>

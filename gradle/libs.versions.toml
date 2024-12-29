@@ -1,0 +1,43 @@
+[versions]
+
+activityKtx = "1.9.3"
+agp = "8.7.2"
+appcompat = "1.7.0"
+arouterCompiler = "1.5.2"
+fragmentKtx = "1.8.5"
+immersionbar = "3.2.2"
+kotlin = "2.0.0"
+coreKtx = "1.13.0"
+lifecycleRuntimeKtx = "2.8.7"
+lottie = "6.5.0"
+material = "1.12.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+startupRuntime = "1.2.0"
+
+
+[libraries]
+androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "activityKtx" }
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-startup-runtime = { module = "androidx.startup:startup-runtime", version.ref = "startupRuntime" }
+arouter-api = { module = "com.alibaba:arouter-api", version.ref = "arouterCompiler" }
+arouter-compiler = { module = "com.alibaba:arouter-compiler", version.ref = "arouterCompiler" }
+immersionbar = { module = "com.geyifeng.immersionbar:immersionbar", version.ref = "immersionbar" }
+immersionbar-components = { module = "com.geyifeng.immersionbar:immersionbar-components", version.ref = "immersionbar" }
+immersionbar-ktx = { module = "com.geyifeng.immersionbar:immersionbar-ktx", version.ref = "immersionbar" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+material = { module = "com.google.android.material:material", version.ref = "material" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+

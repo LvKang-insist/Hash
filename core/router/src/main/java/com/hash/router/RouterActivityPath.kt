@@ -1,0 +1,25 @@
+package com.hash.router
+
+/**
+ * @name RouterActivityPath
+ * @package com.hash.router
+ * @author 345 QQ:1831712732
+ * @time 2024/12/15 20:04
+ * @description
+ */
+class RouterActivityPath {
+    object Main {
+        private const val ROOT = "/main"
+
+        /** 主页 */
+        const val MAIN = "${ROOT}/main"
+
+    }
+
+
+    object Release {
+        private const val ROOT = "/release"
+        /** 发布 */
+        const val RELEASE = "${ROOT}/release"
+    }
+}
