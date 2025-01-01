@@ -27,5 +27,8 @@ class RecommendFragment : BaseBindingFragment<FragmentRecommendBinding>() {
         binding.button.setOnClickListener {
             viewModel.recommendList()
         }
+        binding.button1.setOnClickListener {
+            viewModel.wan()
+        }
     }
 }

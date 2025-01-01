@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import androidx.startup.Initializer
 import com.hash.common.ext.showToast
+import com.hash.net.api.WanAndroidApi
 import com.hash.net.interceptor.BasicParamsInterceptor
 import com.hash.net.interceptor.HeaderInterceptor
 import com.hash.net.net.LvHttp
@@ -21,6 +22,7 @@ class NetInitializer : Initializer<Unit> {
     override fun create(context: Context) {
         LvHttp.Builder(context as Application)
             .setBaseUrl(NetConstants.BASE_URL)
+            .addOtherBaseUrl(WanAndroidApi.BASE_URL_KEY, WanAndroidApi.BASE_URL)
             //是否开启缓存
             .isCache(false)
             .setCode(200)
@@ -30,12 +32,12 @@ class NetInitializer : Initializer<Unit> {
             .addInterceptor(HeaderInterceptor())
             //对 Code 异常的处理，可自定义,参考 ResponseData 类
             .setErrorDispose(ErrorKey.ErrorCode, ErrorValue {
-                "codeError-> message:${it.message}".showToast()
+                "${it.message}".showToast()
             })
             //全局异常处理，参考 ILaunch.kt ，可自定义异常处理，参考 ErrorKey 即可
-            .setErrorDispose(ErrorKey.AllEexeption, ErrorValue {
+            .setErrorDispose(ErrorKey.AllException, ErrorValue {
                 it.printStackTrace()
-                "NetError-> message:${it.message}".showToast()
+                "${it.message}".showToast()
             })
             .build()
     }

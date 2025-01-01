@@ -3,7 +3,9 @@ package com.hash.net.api
 
 import com.hash.bean.home.KyItemList
 import com.hash.net.NetConstants
+import com.hash.net.response.WanResponse
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Url
 
 /**
@@ -27,4 +29,9 @@ interface KyApiService {
     /** 精选 */
     @GET("api/v5/index/tab/feed")
     suspend fun getFeed(): KyItemList
+
+    /** 首页文章列表 */
+    @GET("/article/list/{page}/json")
+    fun homeList(@Path("page") page: Int): WanResponse<String>
+
 }

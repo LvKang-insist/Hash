@@ -9,4 +9,9 @@ import java.lang.Exception
  * @time 2020/6/27 18:25
  * @description
  */
-class CodeException(val code: Int, private val mssage: String) : Exception(mssage)
+class CodeException(val code: Int, private val msg: String) :
+    Exception("CodeError：$code $msg") {
+    override fun toString(): String {
+        return "CodeException(code=$code, msg='$msg')"
+    }
+}

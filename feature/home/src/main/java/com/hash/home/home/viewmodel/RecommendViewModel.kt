@@ -8,6 +8,8 @@ import com.hash.net.api.KyApiService
 import com.hash.net.kyApi
 import com.hash.net.net.launch.api
 import com.hash.net.net.launch.apiHttp
+import com.hash.net.wanApi
+import kotlinx.coroutines.launch
 
 import timber.log.Timber
 
@@ -28,6 +30,16 @@ class RecommendViewModel : ViewModel() {
         }) {
             toData {
                 Timber.e("toData : ${it.itemList.size}")
+            }
+        }
+    }
+
+    fun wan() {
+        viewModelScope.launch {
+            api { wanApi.homeList(0) }.launch {
+                toData {
+                    Timber.e("toData : ${it}")
+                }
             }
         }
     }

@@ -22,6 +22,10 @@ object LvHttp {
         return mController.newInstance(clazz)
     }
 
+    fun <T> createOtherApi(key: String, clazz: Class<T>): T {
+        return mController.newOtherInstance(key, clazz)
+    }
+
     /** 获取异常处理 */
     @JvmStatic
     fun getErrorDispose(errorKey: ErrorKey): ErrorValue? {
@@ -50,11 +54,20 @@ object LvHttp {
             p.appContext = application
         }
 
-        /**
-         * 设置 BaseUrl
-         */
+        /** 设置 BaseUrl */
         fun setBaseUrl(baseUrl: String): Builder {
             p.baseUrl = baseUrl
+            return this
+        }
+
+        /** 添加另外的 BaseUrl */
+        fun addOtherBaseUrl(key: String, baseUrl: String): Builder {
+            p.otherBaseUrl[key] = baseUrl
+            return this
+        }
+
+        fun addOtherMapBaseUrl(map: Map<String, String>): Builder {
+            p.otherBaseUrl.putAll(map)
             return this
         }
 

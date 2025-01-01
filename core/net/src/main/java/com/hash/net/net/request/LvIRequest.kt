@@ -58,11 +58,7 @@ class LvIRequest<T>(
                     }
                 } else {
                     lvResponse.dispatchStateEvent(
-                        ResultState.SuccessState(
-                            it.data(),
-                            it.code(),
-                            it.message()
-                        )
+                        ResultState.SuccessState(it.data(), it.code(), it.message())
                     )
                 }
             } ?: run {
@@ -80,7 +76,7 @@ class LvIRequest<T>(
                     LvHttp.getErrorDispose(it)?.error?.let { it(e) }
                 }
             }
-            LvHttp.getErrorDispose(ErrorKey.AllEexeption)?.error?.invoke(e)
+            LvHttp.getErrorDispose(ErrorKey.AllException)?.error?.invoke(e)
         } finally {
             // 无论成功还是失败都会执行
             lvResponse.dispatchStateEvent(ResultState.EndState())

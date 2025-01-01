@@ -49,8 +49,8 @@ class HomeFragment : BaseBindingFragment<FragmentHomeBinding>() {
                 override fun getItemCount(): Int = tabList.size
                 override fun createFragment(position: Int): Fragment {
                     return when (position) {
-                        0 -> RecommendFragment()
-                        1 -> FeaturedFragment()
+                        0 -> FeaturedFragment()
+                        1 -> RecommendFragment()
                         else -> Fragment()
                     }
                 }

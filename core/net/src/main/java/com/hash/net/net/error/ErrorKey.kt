@@ -12,7 +12,7 @@ enum class ErrorKey {
     /**
      * 全局异常处理
      */
-    AllEexeption,
+    AllException,
 
     /**
      *  自定义 Code 异常

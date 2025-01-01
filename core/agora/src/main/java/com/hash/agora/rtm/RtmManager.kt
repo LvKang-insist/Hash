@@ -57,7 +57,7 @@ object RtmManager {
     }
 
 
-    private fun rtmConfig(): RtmConfig = RtmConfig.Builder("", "")
+    private fun rtmConfig(): RtmConfig = RtmConfig.Builder("a8680428db67423dad1d514374879a60", "")
         .logConfig(rtmLogConfig())
         .build()
 
