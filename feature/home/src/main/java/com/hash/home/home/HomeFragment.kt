@@ -50,7 +50,7 @@ class HomeFragment : BaseBindingFragment<FragmentHomeBinding>() {
                 override fun createFragment(position: Int): Fragment {
                     return when (position) {
                         0 -> FeaturedFragment()
-                        1 -> RecommendFragment()
+                        1 -> WanFragment()
                         else -> Fragment()
                     }
                 }

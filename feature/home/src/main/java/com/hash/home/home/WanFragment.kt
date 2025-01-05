@@ -13,7 +13,7 @@ import com.hash.home.home.viewmodel.RecommendViewModel
  * @time 2024/12/21 00:12
  * @description
  */
-class RecommendFragment : BaseBindingFragment<FragmentRecommendBinding>() {
+class WanFragment : BaseBindingFragment<FragmentRecommendBinding>() {
 
     private val viewModel by viewModels<RecommendViewModel>()
 
@@ -24,11 +24,8 @@ class RecommendFragment : BaseBindingFragment<FragmentRecommendBinding>() {
     }
 
     override fun listener() {
-        binding.button.setOnClickListener {
-            viewModel.recommendList()
-        }
-        binding.button1.setOnClickListener {
-            viewModel.wan()
-        }
+      binding.button.setOnClickListener {
+        viewModel.getData()
+      }
     }
 }

@@ -1,5 +1,6 @@
 package com.hash.net.api
 
+import com.hash.bean.home.BannerListBean
 import com.hash.bean.home.HomeListBean
 import com.hash.net.response.WanResponse
 import retrofit2.http.GET
@@ -21,7 +22,7 @@ interface WanAndroidApi {
 
     /** 鸿蒙专栏 */
     @GET("/banner/json")
-    suspend fun banner(): WanResponse<String>
+    suspend fun banner(): WanResponse<BannerListBean>
 
     /** 首页文章列表 */
     @GET("/article/list/{page}/json")
@@ -36,5 +37,5 @@ interface WanAndroidApi {
     suspend fun hotKey(): WanResponse<String>
 
     @GET("/article/top/json")
-    suspend fun topList(): WanResponse<String>
+    suspend fun topList(): WanResponse<Any>
 }

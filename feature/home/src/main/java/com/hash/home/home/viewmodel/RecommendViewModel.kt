@@ -1,17 +1,15 @@
 package com.hash.home.home.viewmodel
 
-import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hash.common.ext.showToast
-import com.hash.net.api.KyApiService
-import com.hash.net.kyApi
+import com.hash.bean.ConstType
+import com.hash.bean.home.HomeDataBean
 import com.hash.net.net.launch.api
-import com.hash.net.net.launch.apiHttp
 import com.hash.net.wanApi
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
-
-import timber.log.Timber
 
 /**
  * @name RecommendViewModel
@@ -22,26 +20,28 @@ import timber.log.Timber
  */
 class RecommendViewModel : ViewModel() {
 
-    var pageUrl = KyApiService.HOMEPAGE_RECOMMEND_URL
+    var page = 0
 
-    fun recommendList() {
-        apiHttp({
-            kyApi.getAllRec(pageUrl)
-        }) {
-            toData {
-                Timber.e("toData : ${it.itemList.size}")
-            }
-        }
-    }
+    private val _data by lazy { MutableLiveData<MutableList<HomeDataBean>>() }
+    val data: LiveData<MutableList<HomeDataBean>> = _data
 
-    fun wan() {
+    fun getData() {
         viewModelScope.launch {
-            api { wanApi.homeList(0) }.launch {
-                toData {
-                    Timber.e("toData : ${it}")
-                }
+            val allList = mutableListOf<HomeDataBean>()
+            val list = async { api { wanApi.homeList(page) }.launch() }.await()
+            val banner = async { api { wanApi.banner() }.launch() }.await()
+            banner?.let {
+                allList.add(
+                    HomeDataBean(type = ConstType.WanItemType.BANNER_LIST_ITEM, banner = it)
+                )
             }
+            list?.datas.let {
+                val type = ConstType.WanItemType.HOME_LIST_ITEM
+                it?.forEach { e -> allList.add(HomeDataBean(type = type, homeListItem = e)) }
+            }
+            _data.postValue(allList)
         }
     }
+
 
 }

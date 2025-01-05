@@ -8,10 +8,12 @@ import androidx.lifecycle.viewModelScope
 import com.hash.net.net.request.LvIRequest
 import com.hash.net.net.response.IResponse
 import com.hash.net.net.response.LvResponse
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
 
@@ -48,14 +50,29 @@ fun <T> LifecycleOwner.zipLaunch(
     result: (List<T?>) -> Unit
 ) {
     lifecycleScope.launch {
-        val list = arrayListOf<Deferred<T?>>()
-        block.forEach {
-            list.add(async { LvIRequest(it).launch() })
-        }
-        val data = list.awaitAll()
-        launch(Dispatchers.Main) {
-            result.invoke(data)
-        }
+        zipLaunch(this, block, result)
     }
+}
+
+fun <T> ViewModel.zipLaunch(
+    block: List<suspend () -> IResponse<T>>,
+    result: (List<T?>) -> Unit
+) {
+    viewModelScope.launch {
+        zipLaunch(this, block, result)
+    }
+}
+
+private suspend fun <T> zipLaunch(
+    coroutineScope: CoroutineScope,
+    block: List<suspend () -> IResponse<T>>,
+    result: (List<T?>) -> Unit
+) {
+    val list = arrayListOf<Deferred<T?>>()
+    block.forEach {
+        list.add(coroutineScope.async { LvIRequest(it).launch() })
+    }
+    val data = list.awaitAll()
+    result.invoke(data)
 }
 

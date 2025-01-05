@@ -9,14 +9,14 @@ package com.hash.bean.home
  */
 data class HomeListBean(
     val curPage: Int, // 2
-    val datas: List<Data>,
+    val datas: List<HomeListItem>,
     val offset: Int, // 20
     val over: Boolean, // false
     val pageCount: Int, // 797
     val size: Int, // 20
     val total: Int // 15925
 ) {
-    data class Data(
+    data class HomeListItem(
         val adminAdd: Boolean, // false
         val apkLink: String,
         val audit: Int, // 1

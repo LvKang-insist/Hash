@@ -30,8 +30,4 @@ interface KyApiService {
     @GET("api/v5/index/tab/feed")
     suspend fun getFeed(): KyItemList
 
-    /** 首页文章列表 */
-    @GET("/article/list/{page}/json")
-    fun homeList(@Path("page") page: Int): WanResponse<String>
-
 }

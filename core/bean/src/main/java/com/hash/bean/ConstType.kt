@@ -10,7 +10,15 @@ package com.hash.bean
 
 interface ConstType {
 
-    interface KyListItemType{
+    interface WanItemType {
+        companion object {
+            const val UNKNOWN = -1
+            const val BANNER_LIST_ITEM = 0
+            const val HOME_LIST_ITEM = 1
+        }
+    }
+
+    interface KyListItemType {
 
         companion object {
 
@@ -30,21 +38,25 @@ interface ConstType {
 
             const val TEXT_CARD_HEADER6 = 6
 
-            const val TEXT_CARD_HEADER7 = 7    //type:textCard -> dataType:TextCardWithRightAndLeftTitle,type:header7
+            const val TEXT_CARD_HEADER7 =
+                7    //type:textCard -> dataType:TextCardWithRightAndLeftTitle,type:header7
 
-            const val TEXT_CARD_HEADER8 = 8    //type:textCard -> dataType:TextCardWithRightAndLeftTitle,type:header8
+            const val TEXT_CARD_HEADER8 =
+                8    //type:textCard -> dataType:TextCardWithRightAndLeftTitle,type:header8
 
             const val TEXT_CARD_FOOTER1 = 9
 
             const val TEXT_CARD_FOOTER2 = 10    //type:textCard -> dataType:TextCard,type:footer2
 
-            const val TEXT_CARD_FOOTER3 = 11    //type:textCard -> dataType:TextCardWithTagId,type:footer3
+            const val TEXT_CARD_FOOTER3 =
+                11    //type:textCard -> dataType:TextCardWithTagId,type:footer3
 
             const val BANNER = 12               //type:banner -> dataType:Banner
 
             const val BANNER3 = 13              //type:banner3-> dataType:Banner
 
-            const val FOLLOW_CARD = 14          //type:followCard -> dataType:FollowCard -> type:video -> dataType:VideoBeanForClient
+            const val FOLLOW_CARD =
+                14          //type:followCard -> dataType:FollowCard -> type:video -> dataType:VideoBeanForClient
 
             const val TAG_BRIEFCARD = 15        //type:briefCard -> dataType:TagBriefCard
 
@@ -56,13 +68,17 @@ interface ConstType {
 
             const val INFORMATION_CARD = 19     //type:informationCard -> dataType:InformationCard
 
-            const val AUTO_PLAY_VIDEO_AD = 20   //type:autoPlayVideoAd -> dataType:AutoPlayVideoAdDetail
+            const val AUTO_PLAY_VIDEO_AD =
+                20   //type:autoPlayVideoAd -> dataType:AutoPlayVideoAdDetail
 
-            const val HORIZONTAL_SCROLL_CARD = 21    //type:horizontalScrollCard -> dataType:HorizontalScrollCard
+            const val HORIZONTAL_SCROLL_CARD =
+                21    //type:horizontalScrollCard -> dataType:HorizontalScrollCard
 
-            const val SPECIAL_SQUARE_CARD_COLLECTION = 22   //type:specialSquareCardCollection -> dataType:ItemCollection
+            const val SPECIAL_SQUARE_CARD_COLLECTION =
+                22   //type:specialSquareCardCollection -> dataType:ItemCollection
 
-            const val UGC_SELECTED_CARD_COLLECTION = 23   //type:ugcSelectedCardCollection -> dataType:ItemCollection
+            const val UGC_SELECTED_CARD_COLLECTION =
+                23   //type:ugcSelectedCardCollection -> dataType:ItemCollection
 
             const val MAX = 100   //避免外部其他类型与此处包含的某个类型重复。
         }
