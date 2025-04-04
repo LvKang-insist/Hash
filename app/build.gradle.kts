@@ -9,7 +9,7 @@ plugins {
 
 android {
     namespace = "com.hash.app"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.hash.app"
@@ -40,7 +40,6 @@ android {
 
     buildTypes {
         debug {
-            applicationIdSuffix = ".debug"
             isDebuggable = true
             isJniDebuggable = true
             isShrinkResources = false
@@ -49,7 +48,7 @@ android {
             manifestPlaceholders["app_name"] = "Hash Debug 版"
             // 调试模式下只保留一种架构的 so 库，提升打包速度
             ndk {
-                abiFilters.add("armeabi-v7a")
+                abiFilters.add("arm64-v8a")
             }
         }
         release {
@@ -66,7 +65,7 @@ android {
             // 仅保留两种架构的 so 库，根据 BugLy 统计得出
             ndk {
                 // armeabi：万金油架构平台（占用率：0%）
-                // armeabi-v7a：曾经主流的架构平台（占用率：10%）
+                // armeabi-v7a：曾经主流的架构平台（占用率：10%）`
                 // arm64-v8a：目前主流架构平台（占用率：95%）
                 abiFilters.addAll(listOf("armeabi-v7a", "arm64-v8a"))
             }

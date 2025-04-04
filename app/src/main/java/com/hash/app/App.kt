@@ -2,6 +2,7 @@ package com.hash.app
 
 import android.util.Log
 import com.hash.common.IApp
+import timber.log.Timber
 
 /**
  * @name App
@@ -14,7 +15,7 @@ class App : IApp() {
 
     override fun onCreate() {
         super.onCreate()
-        Log.e("---345--->", "App onCreate")
+        Timber.tag("---345--->").e("App onCreate")
     }
 
 }
