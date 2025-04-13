@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.hash.msg"
+    namespace = "com.hash.login"
     compileSdk = 35
 
     defaultConfig {

@@ -2,6 +2,8 @@ package com.hash.home.home
 
 import androidx.fragment.app.viewModels
 import com.hash.common.base.fragment.BaseBindingFragment
+import com.hash.common.ext.showToast
+import com.hash.common.ext.toJson
 import com.hash.home.R
 import com.hash.home.databinding.FragmentRecommendBinding
 import com.hash.home.home.viewmodel.RecommendViewModel
@@ -27,5 +29,9 @@ class WanFragment : BaseBindingFragment<FragmentRecommendBinding>() {
       binding.button.setOnClickListener {
         viewModel.getData()
       }
+
+        viewModel.data.observe(this){
+            showToast(it.toJson())
+        }
     }
 }

@@ -22,4 +22,10 @@ class RouterActivityPath {
         /** 发布 */
         const val RELEASE = "${ROOT}/release"
     }
+
+    object Login {
+        private const val ROOT = "/login"
+        /** 登录 */
+        const val LOGIN = "${ROOT}/account_login"
+    }
 }

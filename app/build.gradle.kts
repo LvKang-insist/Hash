@@ -113,5 +113,6 @@ dependencies {
     implementation(project(":feature:discover"))
     implementation(project(":feature:msg"))
     implementation(project(":feature:mine"))
+    implementation(project(":feature:login"))
     kapt(libs.arouter.compiler)
 }

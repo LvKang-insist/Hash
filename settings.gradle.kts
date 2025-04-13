@@ -32,6 +32,8 @@ include(":feature:discover")
 include(":feature:release")
 include(":feature:msg")
 include(":feature:mine")
+include(":feature:login")
+
 include(":core:net")
 include(":core:bean")
 include(":core:agora")

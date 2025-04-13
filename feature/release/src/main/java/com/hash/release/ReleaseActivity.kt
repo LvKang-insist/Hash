@@ -1,7 +1,6 @@
 package com.hash.release
 
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.hash.common.base.activity.BaseActivity
 import com.hash.common.base.activity.BaseBindingActivity
 import com.hash.release.databinding.ActivityReleaseBinding
 import com.hash.router.RouterActivityPath
@@ -20,10 +19,6 @@ class ReleaseActivity : BaseBindingActivity<ActivityReleaseBinding>() {
 
     override fun initView() {
 
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
     }
 
     override fun finish() {
