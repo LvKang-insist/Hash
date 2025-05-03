@@ -5,8 +5,6 @@ import android.content.Context
 import androidx.startup.Initializer
 import com.hash.common.ext.showToast
 import com.hash.net.api.WanAndroidApi
-import com.hash.net.interceptor.BasicParamsInterceptor
-import com.hash.net.interceptor.HeaderInterceptor
 import com.hash.net.net.LvHttp
 import com.hash.net.net.error.ErrorKey
 import com.hash.net.net.error.ErrorValue
@@ -22,14 +20,11 @@ class NetInitializer : Initializer<Unit> {
     override fun create(context: Context) {
         LvHttp.Builder(context as Application)
             .setBaseUrl(NetConstants.BASE_URL)
-            .addOtherBaseUrl(WanAndroidApi.BASE_URL_KEY, WanAndroidApi.BASE_URL)
             //是否开启缓存
             .isCache(false)
             .setCode(200)
             //是否打印 log
             .isLog(true)
-            .addInterceptor(BasicParamsInterceptor())
-            .addInterceptor(HeaderInterceptor())
             //对 Code 异常的处理，可自定义,参考 ResponseData 类
             .setErrorDispose(ErrorKey.ErrorCode, ErrorValue {
                 "${it.message}".showToast()

@@ -17,7 +17,6 @@ import java.util.concurrent.TimeUnit
 class LvController {
 
     private val apiServiceCache = mutableMapOf<String, Any>()
-    private val otherRetrofitCache = mutableMapOf<String, SoftReference<Retrofit>>()
     private lateinit var retrofit: Retrofit
     private lateinit var params: LvParams
 
@@ -30,21 +29,6 @@ class LvController {
         return apiServiceCache[clazz.name] as T
     }
 
-    fun <T> newOtherInstance(key: String, clazz: Class<T>): T {
-        val url = params.otherBaseUrl[key] ?: throw IllegalArgumentException("key is not exist")
-        var otherRetrofit = otherRetrofitCache[key]?.get()
-        if (otherRetrofit == null) {
-            val builder = setOkhttpCommonParams(createOkhttpBuilder())
-            otherRetrofit = createRetrofit(url, builder.build())
-            otherRetrofitCache[key] = SoftReference(otherRetrofit)
-        }
-        if (apiServiceCache[clazz.name] == null) {
-            val create = otherRetrofit.create(clazz) as Any
-            apiServiceCache[clazz.name] = create
-            return create as T
-        }
-        return apiServiceCache[clazz.name] as T
-    }
 
 
     private fun createOkhttpBuilder(): OkHttpClient.Builder {
@@ -87,13 +71,6 @@ class LvController {
             HTTPSCerUtils.setCertificate(params.appContext, builder, params.cerResId)
         //设置 baseUrl
         retrofit = createRetrofit(params.baseUrl, setOkhttpCommonParams(builder).build())
-
-        //设置 other baseUrl
-        params.otherBaseUrl.forEach { (key, url) ->
-            val b = setOkhttpCommonParams(createOkhttpBuilder())
-            val otherRetrofit = createRetrofit(url, b.build())
-            otherRetrofitCache[key] = SoftReference(otherRetrofit)
-        }
         return this
     }
 

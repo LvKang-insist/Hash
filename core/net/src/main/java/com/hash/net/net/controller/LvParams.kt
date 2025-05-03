@@ -33,7 +33,4 @@ class LvParams {
     var interceptors = arrayListOf<Interceptor>()
     val errorDisposes: MutableMap<ErrorKey, ErrorValue> = mutableMapOf()
     var cerResId: Int = -1;
-
-    val otherBaseUrl = mutableMapOf<String, String>()
-
 }

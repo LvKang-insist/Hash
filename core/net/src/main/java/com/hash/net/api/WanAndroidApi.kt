@@ -15,11 +15,6 @@ import retrofit2.http.Path
  */
 interface WanAndroidApi {
 
-    companion object {
-        const val BASE_URL = "https://www.wanandroid.com"
-        const val BASE_URL_KEY = "wan_android"
-    }
-
     /** 鸿蒙专栏 */
     @GET("/banner/json")
     suspend fun banner(): WanResponse<BannerListBean>

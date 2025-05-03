@@ -9,6 +9,6 @@ package com.hash.net
  */
 object NetConstants {
 
-    const val BASE_URL = "http://baobab.kaiyanapp.com/"
+    const val BASE_URL = "https://www.wanandroid.com"
 
 }
