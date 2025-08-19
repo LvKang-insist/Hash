@@ -11,11 +11,24 @@ import com.hash.net.net.error.CodeException
  */
 
 sealed class ResultState<T> {
-    class BeginState<T> : ResultState<T>()
+
+    /** 请求成功 */
     class SuccessState<T>(val data: T?, val code: Int, val msg: String) : ResultState<T>()
 
-    /** 有些 error 可能也有 data */
-    class ErrorState<T>(val data: T?, val e: Exception) : ResultState<T>()
-    class EndState<T> : ResultState<T>()
+    /** 请求失败 */
+    class ErrorState<T>(val error: Exception) : ResultState<T>()
+
+
+    /** 获取请求成功后的数据 */
+    fun toData(data: (T?) -> Unit): ResultState<T> {
+        if (this is SuccessState) data.invoke(this.data)
+        return this
+    }
+
+    /** 获取请求失败后的错误信息 */
+    fun toError(error: (Exception) -> Unit): ResultState<T> {
+        if (this is ErrorState) error.invoke(this.error)
+        return this
+    }
 }
 

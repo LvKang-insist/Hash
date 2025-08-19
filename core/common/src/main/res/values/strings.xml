@@ -16,4 +16,6 @@
     <string name="common_minute">分</string>
     <string name="common_second">秒</string>
 
+
+    <string name="login_welcome_back">Welcome back</string>
 </resources>

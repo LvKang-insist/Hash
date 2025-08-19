@@ -4,23 +4,74 @@
 
     <data>
 
+        <import type="com.hash.login.R"/>
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-
         android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logo"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="@dimen/dp_80"
+            android:layout_marginTop="@dimen/dp_141"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_6"
+            android:text="@string/login_welcome_back"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/sp_20"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="@dimen/dp_100"
-            android:layout_marginStart="@dimen/dp_20"
-            android:text="Hello!"
-            android:textSize="@dimen/sp_28"
-            android:textColor="@color/red"
-            android:layout_height="wrap_content"/>
+            app:layout_constraintTop_toBottomOf="@id/logo" />
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/dp_327"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_70"
+            android:elevation="5dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="@dimen/dp_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logo">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/dp_24"
+                android:paddingVertical="@dimen/dp_24">
+
+                <include
+                    android:id="@+id/layout_number"
+                    layout="@layout/layout_input"
+                    app:icon="@{R.mipmap.login_number}"
+                    app:showPass="@{false}" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dp_12" />
+
+                <include
+                    android:id="@+id/layout_pass"
+                    layout="@layout/layout_input"
+                    app:icon="@{R.mipmap.login_pass}"
+                    app:showPass="@{false}" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

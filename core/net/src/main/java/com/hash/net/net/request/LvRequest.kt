@@ -1,8 +1,9 @@
 package com.hash.net.net.request
 
 import com.hash.net.net.LvHttp
+import com.hash.net.net.error.CodeException
 import com.hash.net.net.error.ErrorKey
-import com.hash.net.net.response.LvResponse
+import com.hash.net.net.response.IResponse
 import com.hash.net.net.response.ResultState
 
 /**
@@ -12,52 +13,67 @@ import com.hash.net.net.response.ResultState
  * @time 2024/12/23 23:23
  * @description 请求发起类，返回自定义的数据类型
  */
-class LvRequest<T>(
-    private val iResponse: suspend () -> T
-) {
+class LvRequest() {
 
-    suspend fun launch(lvResponse: LvResponse<T>.() -> Unit) {
-        val r = LvResponse<T>()
-        lvResponse.invoke(r)
-        tryCatch(iResponse, r)
+
+    suspend fun <T> request(block: suspend () -> T): ResultState<T> {
+        var t: ResultState<T>?
+        try {
+            val invoke = block.invoke()
+            t = ResultState.SuccessState(invoke, -9999, "IResponse is not implemented")
+        } catch (e: Exception) {
+            t = parseError(e)
+        }
+        return t
     }
 
-    suspend fun launch(): T? = tryCatch(iResponse).t
-
-
-    private suspend fun tryCatch(block: suspend () -> T): LvResponse<T> =
-        tryCatch(block, LvResponse())
-
-
-    private suspend fun <T> tryCatch(
-        block: suspend () -> T,
-        lvResponse: LvResponse<T>
-    ): LvResponse<T> {
-        var result: T? = null
+    suspend fun <T> requestI(block: suspend () -> IResponse<T>): ResultState<T> {
+        var t: ResultState<T>?
         try {
-            lvResponse.dispatchStateEvent(ResultState.BeginState())
+            val invoke = block.invoke()
+            t = parseIResponse(invoke)
+        } catch (e: Exception) {
+            t = parseError(e)
+        }
+        return t
+    }
 
-            result = block.invoke()
-            lvResponse.t = result
 
-            lvResponse.dispatchStateEvent(
-                ResultState.SuccessState(
-                    result, 0, "IResponse is not implemented"
+    fun <T> parseError(e: Exception): ResultState<T> {
+        val t: ResultState<T> = ResultState.ErrorState(error = e)
+        // 自动匹配异常
+        ErrorKey.entries.forEach {
+            if (it.name == e::class.java.simpleName) {
+                LvHttp.getErrorDispose(it)?.error?.let { it(e) }
+            }
+        }
+        // 如果全局异常启用
+        LvHttp.getErrorDispose(ErrorKey.AllException)?.error?.let {
+            it(e)
+        }
+        return t
+    }
+
+
+    fun <T> parseIResponse(response: IResponse<T>): ResultState<T> {
+        var t: ResultState<T>?
+        val data = response.data()
+        val code = response.code()
+        val msg = response.message()
+        // Code 验证
+        if (!LvHttp.getCode().contains(code)) {
+            t = ResultState.ErrorState(error = CodeException(code, "code 异常"))
+            // Code 异常处理
+            LvHttp.getErrorDispose(ErrorKey.ErrorCode)?.error?.invoke(
+                CodeException(
+                    code,
+                    msg
                 )
             )
-        } catch (e: Exception) {
-            lvResponse.dispatchStateEvent(ResultState.ErrorState(null, e))
-            // 自动匹配异常
-            ErrorKey.entries.forEach {
-                if (it.name == e::class.java.simpleName) {
-                    LvHttp.getErrorDispose(it)?.error?.let { it(e) }
-                }
-            }
-            LvHttp.getErrorDispose(ErrorKey.AllException)?.error?.invoke(e)
-        } finally {
-            // 无论成功还是失败都会执行
-            lvResponse.dispatchStateEvent(ResultState.EndState())
+        } else {
+            t = ResultState.SuccessState(data, code, msg)
         }
-        return lvResponse
+        return t
     }
+
 }

@@ -13,6 +13,4 @@ import com.hash.net.net.LvHttp
  */
 
 
-val kyApi by lazy { LvHttp.createApi(KyApiService::class.java) }
-
-val wanApi by lazy { LvHttp.createOtherApi(WanAndroidApi.BASE_URL_KEY, WanAndroidApi::class.java) }
+val wanApi by lazy { LvHttp.createApi(WanAndroidApi::class.java) }

@@ -1,5 +1,5 @@
 package com.hash.main.splash
-
+import android.os.Bundle
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.ScaleAnimation
@@ -24,7 +24,7 @@ class SplashActivity : BaseBindingActivity<ActivitySplashBinding>() {
 
     override fun layoutId(): Int = R.layout.activity_splash
 
-    private val splashDuration = 3 * 1000L
+    private val splashDuration = 500L
 
     private val alphaAnimation by lazy {
         AlphaAnimation(0.5f, 1.0f).apply {
@@ -58,7 +58,7 @@ class SplashActivity : BaseBindingActivity<ActivitySplashBinding>() {
 //            finish()
         }
         lifecycleScope.launch {
-//            delay(splashDuration)
+            delay(splashDuration)
             launch(Dispatchers.Main) {
                 ARouter.getInstance().build(RouterActivityPath.Main.MAIN)
                     .withTransition(

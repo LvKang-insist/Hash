@@ -6,6 +6,8 @@
 
 
     <color name="input_background">#000000</color>
+    <color name="input_hint_color">#9CA3AF</color>
+    <color name="input_text_color">#000000</color>
 
     <!--文字相关-->
     <color name="textColor">#FF111A34</color>
