@@ -2,7 +2,6 @@ package com.hash.home.home.viewmodel
 
 import android.annotation.SuppressLint
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,11 +9,15 @@ import androidx.lifecycle.viewModelScope
 import com.hash.bean.home.HomeListBean.HomeListItem
 import com.hash.net.net.download.DownResponse
 import com.hash.net.net.download.start
-import com.hash.net.net.launch.launchApi
-import com.hash.net.net.launch.launchHttp
-import com.hash.net.wanApi
-import kotlinx.coroutines.async
+import com.hash.net.net.launch.asyncApi
+import com.hash.net.net.launch.asyncHttp
+import com.hash.net.api.api
+import com.hash.net.net.response.ResultStateFlow
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import java.io.File
 
 /**
@@ -31,23 +34,32 @@ class RecommendViewModel : ViewModel() {
     private val _data by lazy { MutableLiveData<MutableList<HomeListItem>>() }
     val data: LiveData<MutableList<HomeListItem>> = _data
 
+    suspend fun CoroutineScope.bbb() {
+        launch { }
+    }
+
     fun getData() {
         viewModelScope.launch {
-            launchApi {
-                wanApi.homeList(0)
+            asyncApi {
+                api.homeList(0)
             }.toData {
-                _data.postValue(it?.datas?.toMutableList() ?: mutableListOf())
+//                _data.postValue(it.datas.toMutableList())
             }.toError {
-
-            }
-
+            }.async(this)
         }
     }
 
+
     fun download() {
         viewModelScope.launch {
-            launchHttp {
-                val download = wanApi.download()
+            asyncApi { api.homeList(0) }
+                .toBegin { }
+                .toEnd { }
+                .toData { }
+                .toError { }
+                .async()
+            asyncHttp {
+                val download = api.download()
                     .start(object : DownResponse("LvHttp", "chebangyang.apk") {
                         override fun create(size: Float) {
                             Log.e("-------->", "create:总大小 ${(size)} ")
@@ -55,7 +67,7 @@ class RecommendViewModel : ViewModel() {
 
                         @SuppressLint("SetTextI18n")
                         override fun process(process: Float) {
-                            Log.e("-------->","$process %")
+                            Log.e("-------->", "$process %")
                         }
 
                         override fun error(e: Exception) {
@@ -65,8 +77,6 @@ class RecommendViewModel : ViewModel() {
 
                         override fun done(file: File) {
                             //完成
-                            Toast.makeText(this@MainActivity, "成功", Toast.LENGTH_SHORT)
-                                .show()
                         }
                     })
             }

@@ -1,19 +1,15 @@
 package com.hash.net.net.launch
 
-import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.viewModelScope
-import com.hash.net.net.request.LvRequest
+import com.hash.net.net.request.RequestBlockIResponse
+import com.hash.net.net.request.RequestBlockObject
 import com.hash.net.net.response.IResponse
-import com.hash.net.net.response.ResultState
+import com.hash.net.net.response.ResultStateFlow
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.launch
-
 
 /**
  * @name ILaunch
@@ -21,31 +17,51 @@ import kotlinx.coroutines.launch
  * @author 345 QQ:1831712732
  * @time 2020/6/23 21:33
  * @description 请求发起的扩展函数
- * 返回实现 [IResponse] 中的 data 数据
  */
 
 
-suspend fun <T> launchHttp(block: suspend () -> T): ResultState<T> = LvRequest().request(block)
+/**
+ * 异步发起请求
+ * @param block 请求的代码块 ,T 自定义的返回数据类型
+ * @return [ResultStateFlow] 返回结果状态流
+ */
+fun <T> asyncHttp(block: suspend () -> T): ResultStateFlow<T> =
+    ResultStateFlow(RequestBlockObject(block))
 
-suspend fun <T> launchApi(block: suspend () -> IResponse<T>): ResultState<T> {
-    return LvRequest().requestI(block)
-}
+/** 同步发起请求 */
+suspend fun <T> syncHttp(block: suspend () -> T): T? =
+    ResultStateFlow(RequestBlockObject(block)).sync()
+
+/**
+ * 异步发起请求
+ * @param block 请求的代码块 ,T: 实现了 [IResponse] 接口的返回数据类型
+ * @return [ResultStateFlow] 返回结果状态流
+ */
+fun <T> asyncApi(block: suspend () -> IResponse<T>): ResultStateFlow<T> =
+    ResultStateFlow(RequestBlockIResponse(block))
+
+/** 同步发起请求 */
+suspend fun <T> syncApi(block: suspend () -> IResponse<T>): T? =
+    ResultStateFlow(RequestBlockIResponse(block)).sync()
 
 
-fun <T> LifecycleOwner.zipLaunch(
-    block: List<suspend () -> T>,
-    result: (List<ResultState<T>>) -> Unit
-) {
-    lifecycleScope.launch {
-        val list = arrayListOf<Deferred<ResultState<T>>>()
-        block.forEach {
-            it
-            list.add(async { LvRequest().request(it) })
-        }
-        val data = list.awaitAll()
-        launch(Dispatchers.Main) {
-            result.invoke(data)
-        }
+/**
+ * 同步并发请求
+ * @param block 请求的代码块列表
+ * @return List<T?> 返回结果列表
+ * @description 使用协程的 async 和 awaitAll 来实现并发请求
+ * for example:
+ *
+ * ``` kotlin
+ * val list = arrayListOf<suspend () -> HomeListBean>()
+ * list.add { wanApi.home(page) }
+ * val resultList = zipSyncHttp(block = list)
+ * ```
+ */
+suspend fun <T> CoroutineScope.zipSyncHttp(block: List<suspend () -> T?>): List<T?> {
+    val list = arrayListOf<Deferred<T?>>()
+    block.forEach { it ->
+        list.add(async { syncHttp(it) })
     }
+    return list.awaitAll()
 }
-

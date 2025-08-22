@@ -16,28 +16,24 @@ import com.hash.net.net.response.ResultState
 class LvRequest() {
 
 
-    suspend fun <T> request(block: suspend () -> T): ResultState<T> {
-        var t: ResultState<T>?
+    suspend fun <T> request(block: RequestBlock<T>): ResultState<T> {
+        var t: ResultState<T>? = null
         try {
-            val invoke = block.invoke()
-            t = ResultState.SuccessState(invoke, -9999, "IResponse is not implemented")
+            when (block) {
+                is RequestBlockObject -> {
+                    val invoke = block.invoke()
+                    t = ResultState.SuccessState(invoke, -9999, "IResponse is not implemented")
+                }
+                is RequestBlockIResponse -> {
+                    val invoke = block.invoke()
+                    t = parseIResponse(invoke)
+                }
+            }
         } catch (e: Exception) {
             t = parseError(e)
         }
-        return t
+        return t ?: ResultState.ErrorState(error = Exception("Unknown error"))
     }
-
-    suspend fun <T> requestI(block: suspend () -> IResponse<T>): ResultState<T> {
-        var t: ResultState<T>?
-        try {
-            val invoke = block.invoke()
-            t = parseIResponse(invoke)
-        } catch (e: Exception) {
-            t = parseError(e)
-        }
-        return t
-    }
-
 
     fun <T> parseError(e: Exception): ResultState<T> {
         val t: ResultState<T> = ResultState.ErrorState(error = e)
