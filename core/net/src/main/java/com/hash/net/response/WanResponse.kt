@@ -9,11 +9,14 @@ import com.hash.net.net.response.IResponse
  * @time 2024/12/31 23:55
  * @description
  */
-data class WanResponse<T>(val data: T, val errorCode: Int, val errorMsg: String) :
-    IResponse<T> {
+data class WanResponse<T>(
+    private val data: T,
+    private val errorCode: Int,
+    private val errorMsg: String
+) : IResponse<T> {
     override fun data(): T = data
 
-    override fun code(): Int = if (errorCode == 0) 200 else errorCode
+    override fun code(): Int = errorCode
 
     override fun message(): String = errorMsg
 }

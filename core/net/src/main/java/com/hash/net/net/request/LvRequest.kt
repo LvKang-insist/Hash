@@ -4,7 +4,8 @@ import com.hash.net.net.LvHttp
 import com.hash.net.net.error.CodeException
 import com.hash.net.net.error.ErrorKey
 import com.hash.net.net.response.IResponse
-import com.hash.net.net.response.ResultState
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 /**
  * @name Request
@@ -15,18 +16,32 @@ import com.hash.net.net.response.ResultState
  */
 class LvRequest() {
 
-
-    suspend fun <T> request(block: RequestBlock<T>): ResultState<T> {
+    suspend fun <T> request(block: AbstractRequestBlock<T>): ResultState<T> {
         var t: ResultState<T>? = null
         try {
             when (block) {
                 is RequestBlockObject -> {
-                    val invoke = block.invoke()
-                    t = ResultState.SuccessState(invoke, -9999, "IResponse is not implemented")
+                    // 确保阻塞/网络调用在 IO 线程池执行
+                    val invoke = withContext(Dispatchers.IO) { block.invoke() }
+                    if (invoke == null) {
+                        return ResultState.SuccessState(null)
+                    }
+                    if (invoke is IResponse<*>) {
+                        val s = parseIResponse(invoke as IResponse<*>)
+                        if (s == null) {
+                            @Suppress("UNCHECKED_CAST")
+                            return ResultState.SuccessState(invoke as T)
+                        }
+                        @Suppress("UNCHECKED_CAST")
+                        return ResultState.CodeErrorState(s.first, invoke as T)
+                    }
+                    return ResultState.SuccessState(invoke)
                 }
-                is RequestBlockIResponse -> {
-                    val invoke = block.invoke()
-                    t = parseIResponse(invoke)
+
+                is DownloadBlockObject -> {
+                    // 确保阻塞/网络调用在 IO 线程池执行
+                    val invoke = withContext(Dispatchers.IO) { block.invoke() }
+                    return ResultState.SuccessState(invoke)
                 }
             }
         } catch (e: Exception) {
@@ -35,30 +50,27 @@ class LvRequest() {
         return t ?: ResultState.ErrorState(error = Exception("Unknown error"))
     }
 
-    fun <T> parseError(e: Exception): ResultState<T> {
+    private fun <T> parseError(e: Exception): ResultState<T> {
         val t: ResultState<T> = ResultState.ErrorState(error = e)
         // 自动匹配异常
         ErrorKey.entries.forEach {
             if (it.name == e::class.java.simpleName) {
-                LvHttp.getErrorDispose(it)?.error?.let { it(e) }
+                LvHttp.getErrorDispose(it)?.error?.let { handler -> handler(e) }
             }
         }
         // 如果全局异常启用
-        LvHttp.getErrorDispose(ErrorKey.AllException)?.error?.let {
-            it(e)
+        LvHttp.getErrorDispose(ErrorKey.AllException)?.error?.let { handler ->
+            handler(e)
         }
         return t
     }
 
 
-    fun <T> parseIResponse(response: IResponse<T>): ResultState<T> {
-        var t: ResultState<T>?
-        val data = response.data()
+    private fun parseIResponse(response: IResponse<*>): Pair<Int, String>? {
         val code = response.code()
         val msg = response.message()
         // Code 验证
         if (!LvHttp.getCode().contains(code)) {
-            t = ResultState.ErrorState(error = CodeException(code, "code 异常"))
             // Code 异常处理
             LvHttp.getErrorDispose(ErrorKey.ErrorCode)?.error?.invoke(
                 CodeException(
@@ -66,10 +78,9 @@ class LvRequest() {
                     msg
                 )
             )
-        } else {
-            t = ResultState.SuccessState(data, code, msg)
+            return Pair(code, msg)
         }
-        return t
+        return null
     }
 
 }

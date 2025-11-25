@@ -5,6 +5,7 @@ import com.hash.bean.home.HomeListBean
 import com.hash.net.response.WanResponse
 import okhttp3.ResponseBody
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.Path
 import retrofit2.http.Streaming
 
@@ -24,7 +25,9 @@ interface WanAndroidApi {
     /** 首页文章列表 */
     @GET("/article/list/{page}/json")
     suspend fun homeList(@Path("page") page: Int): WanResponse<HomeListBean>
-    suspend fun home(@Path("page") page: Int): HomeListBean
+
+    @GET("/article/list/{page}/json")
+    suspend fun home(@Path("page") page: Int): Int
 
     /** 常用网站 */
     @GET("/friend/json")
@@ -38,6 +41,6 @@ interface WanAndroidApi {
     suspend fun topList(): WanResponse<Any>
 
     @Streaming
-    @GET("https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz")
-    suspend fun download(): ResponseBody
+    @GET("https://yesme-public.oss-cn-hongkong.aliyuncs.com/app/resources/345/petal/petal_y_7.apk")
+    suspend fun downFile(@Header("Range") range: String? = null): ResponseBody
 }

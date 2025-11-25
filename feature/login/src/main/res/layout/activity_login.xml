@@ -4,7 +4,7 @@
 
     <data>
 
-        <import type="com.hash.login.R"/>
+        <import type="com.hash.login.R" />
 
     </data>
 
@@ -36,6 +36,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/input_card"
             android:layout_width="@dimen/dp_327"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_70"
@@ -70,8 +71,16 @@
                     app:showPass="@{false}" />
             </androidx.appcompat.widget.LinearLayoutCompat>
 
-
         </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="@dimen/dp_260"
+            android:layout_height="@dimen/dp_50"
+            android:layout_marginTop="50dp"
+            android:background="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_card" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

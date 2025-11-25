@@ -1,7 +1,5 @@
 package com.hash.net.net.error
 
-import java.lang.Exception
-
 /**
  * @name ErrorValue
  * @package com.www.net.error

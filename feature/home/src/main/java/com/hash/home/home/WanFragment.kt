@@ -26,11 +26,14 @@ class WanFragment : BaseBindingFragment<FragmentRecommendBinding>() {
     }
 
     override fun listener() {
-      binding.button.setOnClickListener {
-        viewModel.getData()
-      }
+        binding.button1.setOnClickListener {
+            viewModel.getData()
+        }
+        binding.button2.setOnClickListener {
+            viewModel.down()
+        }
 
-        viewModel.data.observe(this){
+        viewModel.data.observe(this) {
             showToast(it.toJson())
         }
     }

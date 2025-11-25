@@ -9,7 +9,6 @@ import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.Protocol
 import retrofit2.Retrofit
-import java.lang.ref.SoftReference
 import java.util.*
 import java.util.concurrent.TimeUnit
 
